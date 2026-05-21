@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+
+
+</head>
+<body>
+
+    <button class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+    </button>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="logo">🏥</div>
+            <h2>SmartQueue</h2>
+            <p>Hospital Admin System</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <a href="#" onclick="showAdminSection('dashboard')">📊 Dashboard</a>
+        <a href="#" onclick="showAdminSection('patients')">👥 Patients</a>
+        <a href="#" onclick="showAdminSection('queue')">⏳ Queue</a>
+        <a href="#" onclick="showAdminSection('doctors')">👨‍⚕️ Doctors</a>
+        <a href="#" onclick="showAdminSection('appointments')">📅 Appointments</a>
+        <a href="#" onclick="showAdminSection('settings')">⚙ Settings</a>
+
+        <div class="divider"></div>
+
+        <a href="index.html">🏠 Home</a>
+        <a href="#" onclick="logout()">🚪 Logout</a>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- DASHBOARD -->
+        <div id="dashboardSection" class="adminSection">
+
+            <h1>Admin Dashboard</h1>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Total Patients</h3>
+                    <p id="totalPatients">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Active Queue</h3>
+                    <p id="activeQueue">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Doctors</h3>
+                    <p id="totalDoctors">0</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PATIENTS -->
+        <div id="patientsSection" class="adminSection" style="display:none;">
+
+            <h1>Patients</h1>
+
+            <div id="patientList"></div>
+
+            <br>
+
+            <button onclick="clearCompletedPatients()">
+                Clear Completed
+            </button>
+
+        </div>
+
+        <!-- QUEUE -->
+        <div id="queueSection" class="adminSection" style="display:none;">
+
+            <h1>Queue Management</h1>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Token</th>
+                        <th>Patient</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="queueTable"></tbody>
+            </table>
+
+            <br>
+
+            <button onclick="nextPatient()">Next Patient</button>
+            <button onclick="resetQueue()">Reset Queue</button>
+
+        </div>
+
+        <!-- DOCTORS -->
+        <div id="doctorsSection" class="adminSection" style="display:none;">
+
+            <h1>Doctors</h1>
+
+            <input id="doctorName" placeholder="Doctor Name">
+            <input id="doctorExpertise" placeholder="Expertise">
+
+            <button onclick="addDoctor()">Add Doctor</button>
+
+            <div id="doctorList"></div>
+
+        </div>
+
+        <!-- APPOINTMENTS -->
+        <div id="appointmentsSection" class="adminSection" style="display:none;">
+
+            <h1>Appointments</h1>
+
+            <div id="appointmentList"></div>
+
+        </div>
+
+        <!-- SETTINGS -->
+        <div id="settingsSection" class="adminSection" style="display:none;">
+
+            <h1>Settings</h1>
+
+            <button onclick="clearUsers()">Clear Users</button>
+            <button onclick="clearDoctors()">Clear Doctors</button>
+            <button onclick="systemReset()">Reset System</button>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="admin.js"></script>
+
+
+
+</body>
+</html>
