@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <button class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+    </button>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <h2>Smart Queue</h2>
+
+        <a href="#" onclick="showSection('token')">My Token</a>
+        <a href="#" onclick="showSection('status')">Queue Status</a>
+        <a href="#" onclick="showSection('profile')">Profile</a>
+
+        <a href="index.html">Home</a>
+        <a href="#" onclick="logout()">Logout</a>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <h1>User Dashboard</h1>
+
+        <!-- TOKEN SECTION -->
+        <div id="tokenSection" class="section">
+
+            <div class="card">
+                <h3>Your Token</h3>
+                <p><strong id="myToken">---</strong></p>
+            </div>
+
+        </div>
+
+        <!-- STATUS SECTION -->
+        <div id="statusSection" class="section" style="display:none;">
+
+            <div class="card">
+                <h3>Current Serving</h3>
+                <p><strong id="currentServing">---</strong></p>
+            </div>
+
+            <div class="card">
+                <h3>Waiting Time</h3>
+                <p><strong id="waitingTime">---</strong></p>
+            </div>
+
+        </div>
+
+        <!-- PROFILE SECTION -->
+        <div id="profileSection" class="section" style="display:none;">
+
+            <div class="profile-card">
+
+                <h2>Patient Profile</h2>
+
+                <p><strong>Name:</strong> <span id="profileName"></span></p>
+                <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+                <p><strong>Phone:</strong> <span id="profilePhone"></span></p>
+                <p><strong>Department:</strong> <span id="profileDepartment"></span></p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>
